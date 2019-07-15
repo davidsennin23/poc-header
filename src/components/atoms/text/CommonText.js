@@ -2,8 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Common = styled.p`
-    font-size: 0.9em;
-    margin-bottom: 5px;
+    font-size: 0.625em;
 `;
 
 const CommonText = ({children}) =>

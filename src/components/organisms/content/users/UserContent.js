@@ -7,12 +7,13 @@ import UserData from './UserData';
 const UserContainer = styled.div`
     width: 100%;
     display: flex;
-    align-items: top;
 `;
 
+/* TODO: Substituir o UserContainer por <></> */
+/* TODO: Criar componente de lazy-load para as fotos */
 const UserContent = ({user}) =>
     <UserContainer>
-        <MainInfoTemplate>
+        <MainInfoTemplate width={"100px"} height={"70px"}>
             <UserFoto src={user.getUrlFoto()}/>
         </MainInfoTemplate>
         <MainInfoTemplate>

@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 const InfoCard = styled.div`
-    width: 50%;
-    max-width: 50%;
-    padding: 5px;
-    display: inline-block;
+    padding: 0.1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     word-wrap: break-word;
 `;
 
-const MainInfoTemplate = ({children}) => (
-    <InfoCard>
+const MainInfoTemplate = ({width='auto', children, height='auto'}) => (
+    <InfoCard style={{width, height}}>
         {children}
     </InfoCard>
 )

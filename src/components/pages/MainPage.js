@@ -13,7 +13,7 @@ import {
 const BodyContent = (
 <Switch>
     <Route exact path="/" component={UserList(MainContent)}/>
-    <Route path="/one" component={() => <MainContent>One</MainContent>}/>
+    <Route path="/one/:userFilter?" component={(props) => <MainContent>{props.match.params.userFilter}</MainContent>}/>
     <Route path="/two/:userFilter?" component={UserMeals(MainContent)}/>
 </Switch>
 );

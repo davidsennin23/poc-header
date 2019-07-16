@@ -17,9 +17,6 @@ const MakeContainer = ({ marginBottom = 'auto', paddingLeft = '0' }, content) =>
     );
 }
 
-/* TODO: Fazer o texto do nome ser um link para a listagem de fotos, usando o usuário como filtro */
-/* TODO: Fazer o texto de Editar ser  */
-
 const UserData = ({ user }) =>
     MakeContainer({ paddingLeft: '0.6em' }, <>
         {MakeContainer({ marginBottom: '0.375em' },
@@ -33,7 +30,9 @@ const UserData = ({ user }) =>
         {MakeContainer({ marginBottom: '0.15em' },
             <CommonText>{user.getEmail()}</CommonText>
         )}
-        <CommonText>{"Editar"}</CommonText>
+        <InternalLink to={`/one/${user.getId()}`}>
+            <CommonText>{"Editar"}</CommonText>
+        </InternalLink>
     </>)
 
 export default UserData;

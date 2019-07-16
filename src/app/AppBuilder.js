@@ -12,6 +12,7 @@ class App {
         data.forEach(customer => 
             customers.addCustomer(new Customer(
                 // {...customer}
+                customer.id,
                 customer.nome,
                 customer.sobrenome,
                 customer.dataNasc,

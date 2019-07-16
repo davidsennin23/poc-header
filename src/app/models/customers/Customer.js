@@ -2,7 +2,8 @@ import utils from '../utils/Utils';
 
 class Customer {
 
-    constructor(nome, sobrenome, dataNasc, telefone, email, clienteDesde, urlFoto) {
+    constructor(id, nome, sobrenome, dataNasc, telefone, email, clienteDesde, urlFoto) {
+        this._id = id;
         this._nome = nome;
         this._sobrenome = sobrenome;
         this._dataNasc = dataNasc;
@@ -11,6 +12,9 @@ class Customer {
         this._clienteDesde = clienteDesde;
         this._urlFoto = urlFoto;
     }
+
+    getId = () => this._id;
+    setId = (id) => this._id = id;
 
     getNome = () => this._nome;
     setNome = (nome) => this._nome = nome;

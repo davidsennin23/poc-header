@@ -10,7 +10,7 @@ const StyledLink = styled(Link)`
         color: #CC99AA;
     }
 `
-
+/* TODO: refatorar a forma que é feito o link do menu */
 const menuLink = (to) => ({children}) =>
     <StyledLink to={to}>
         <MenuText>{children}</MenuText>

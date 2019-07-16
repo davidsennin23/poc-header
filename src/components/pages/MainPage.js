@@ -3,6 +3,7 @@ import MainTemplate from '../templates/MainTemplate';
 import HeaderContent from '../organisms/header/HeaderContent';
 import MainContent from '../organisms/content/MainContent';
 import UserList from '../organisms/content/users/UserList';
+import UserMeals from '../organisms/content/meals/UserMeals';
 import {
     BrowserRouter as Router,
     Route,
@@ -13,7 +14,7 @@ const BodyContent = (
 <Switch>
     <Route exact path="/" component={UserList(MainContent)}/>
     <Route path="/one" component={() => <MainContent>One</MainContent>}/>
-    <Route path="/two" component={() => <MainContent>Two</MainContent>}/>
+    <Route path="/two/:userFilter?" component={UserMeals(MainContent)}/>
 </Switch>
 );
 

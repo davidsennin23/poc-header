@@ -9,7 +9,6 @@ const UserContainer = styled.div`
     display: flex;
 `;
 
-/* TODO: Substituir o UserContainer por <></> */
 /* TODO: Criar componente de lazy-load para as fotos */
 const UserContent = ({user}) =>
     <UserContainer>

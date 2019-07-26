@@ -1,20 +1,35 @@
 import React from 'react';
-import FormPanel from './FormPanel';
 
 const Form = (FormComponent) =>
     class extends React.Component {
+        state = {}
+        handleChange = e => {
+            const node = e.target;
+            this.setState({
+                [node.name]: {node, value: node.value}
+            });
+        }
 
         registerComponent = (node) => {
-            console.log(node);
+            if (!node || this.state[node.name]) return;
+            this.setState({
+                [node.name]: {node, value: node.value}
+            });
+            if (node.type === "text") {
+                node.addEventListener("change", this.handleChange);
+            }
         }
 
         render() {
             return (
-                <FormPanel>
-                    <FormComponent registerComponentFunction={this.registerComponent}>
-                        {this.props.children}
-                    </FormComponent>
-                </FormPanel>
+                <FormComponent 
+                    registerComponentFunction={this.registerComponent}
+                    {...this.props}
+                >
+                    {
+                        this.props.children
+                    }
+                </FormComponent>
             )
         }
 

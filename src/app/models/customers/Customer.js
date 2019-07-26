@@ -13,8 +13,8 @@ class Customer {
         this._urlFoto = urlFoto;
     }
 
-    getId = () => this._id;
-    setId = (id) => this._id = id;
+    getID = () => this._id;
+    setID = (id) => this._id = id;
 
     getNome = () => this._nome;
     setNome = (nome) => this._nome = nome;
@@ -38,7 +38,18 @@ class Customer {
     setUrlFoto = (urlFoto) => this._urlFoto = urlFoto;
 
     desdeFormatted = () => utils.desdeTextFormat(this._clienteDesde)
-
+    getJson = () => {
+        return {
+            id: this._id,
+            nome: this._nome,
+            sobrenome: this._sobrenome,
+            dataNasc: this._dataNasc,
+            telefone: this._telefone,
+            email: this._email,
+            clienteDesde: this._clienteDesde,
+            urlFoto: this._urlFoto,
+        };
+    }
 }
 
 export default Customer;

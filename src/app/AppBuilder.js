@@ -1,28 +1,8 @@
-import CustomersList from './models/customers/CustomersList';
-import data from '../data/users';
-import Customer from './models/customers/Customer';
-
+import Customers from './models/customers/Customers';
 class App {
 
     constructor() {
-    }
-
-    loadCustomersList() {
-        const customers = new CustomersList();
-        data.forEach(customer => 
-            customers.addCustomer(new Customer(
-                // {...customer}
-                customer.id,
-                customer.nome,
-                customer.sobrenome,
-                customer.dataNasc,
-                customer.telefone,
-                customer.email,
-                customer.clienteDesde,
-                customer.urlFoto
-            ))
-        );
-        return customers;
+        this.customers = new Customers();
     }
 
 } 

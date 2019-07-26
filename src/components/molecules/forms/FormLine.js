@@ -5,15 +5,7 @@ const LineLabelInput = styled.div`
     width: 100%;
 `;
 
-const FormLine = ({children, lineContainer}) => React.createElement(lineContainer,{}, children)
-    
-
-{/* <lineContainer.type>
-{children
-/* {React.children.map(children, child =>
-    React.cloneElement(child,{ref: ref})    
-)} */}
-// </lineContainer.type> */}
+const FormLine = ({children, lineContainer}) => lineContainer && React.createElement(lineContainer,{}, children)
 
 export default FormLine;
 export { LineLabelInput };

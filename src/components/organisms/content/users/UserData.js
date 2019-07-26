@@ -20,7 +20,7 @@ const MakeContainer = ({ marginBottom = 'auto', paddingLeft = '0' }, content) =>
 const UserData = ({ user }) =>
     MakeContainer({ paddingLeft: '0.6em' }, <>
         {MakeContainer({ marginBottom: '0.375em' },
-            <InternalLink to={`/two/${user.getId()}`}>
+            <InternalLink to={`/two/${user.getID()}`}>
                 <HighlightedText>{user.getNome() + " " + user.getSobrenome()}</HighlightedText>
             </InternalLink>
         )}
@@ -30,7 +30,7 @@ const UserData = ({ user }) =>
         {MakeContainer({ marginBottom: '0.15em' },
             <CommonText>{user.getEmail()}</CommonText>
         )}
-        <InternalLink to={`/one/${user.getId()}`}>
+        <InternalLink to={`/one/${user.getID()}`}>
             <CommonText>{"Editar"}</CommonText>
         </InternalLink>
     </>)

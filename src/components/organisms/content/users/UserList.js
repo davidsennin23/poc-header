@@ -14,7 +14,7 @@ const UserList = (ContentContainer) =>
             this.setState(prevState => {
                 return {
                     users: prevState.users.concat(
-                        app
+                        app.customers
                             .loadCustomersList()
                             .getCustomersList()    
                     )

@@ -10,7 +10,7 @@ const FormLayout = ({registerComponentFunction, user={}}) =>
         <form>
             <FormLine lineContainer={LineLabelInput}>
                 <Label>Label:</Label>
-                <Input value={user.nome} ref={registerComponentFunction}/>
+                <Input defaultValue={user.nome} name="nome" ref={registerComponentFunction}/>
             </FormLine>
         </form>
     </FormPanel>

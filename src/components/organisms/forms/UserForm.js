@@ -6,7 +6,10 @@ const UserForm = (Container, Form) =>
     class extends React.Component {
         state = {}
 
-        handleSubmit = (e) => console.log(e);
+        handleSubmit = (e) => {
+            e.preventDefault();
+            console.log(this.getSharedState());
+        }
 
         componentDidMount() {
             let user, userID;

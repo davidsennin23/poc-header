@@ -1,18 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledLabel = (input) => styled.label`
-    for: ${input}
+const StyledLabel = styled.label`
+    display: inline-block;
+    padding-bottom: 0.125em;
 `;
 
-const getLabelFor = (input, children) => {
-    const Label = StyledLabel(input);
-    return <Label>{children}</Label>
-}
-
-const Label = ({input, children}) =>
-    <>
-        {getLabelFor(input, children)}
-    </>
+const Label = ({input, children}) => <StyledLabel htmlFor={input}>{children}</StyledLabel>
 
 export default Label;

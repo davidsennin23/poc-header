@@ -37,7 +37,7 @@ class SharedState {
     }
 
     getState() {
-        return _g(this, _getState);
+        return _g(this, _getState)();
         // return _g(this, _getState).apply(this);
     }
 

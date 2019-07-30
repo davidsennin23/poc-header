@@ -1,4 +1,5 @@
 import React from 'react';
+import {registerComponent, unregisterComponent} from '../../utils/SharedStates';
 
 const Form = (FormComponent) =>
     class extends React.Component {
@@ -8,6 +9,25 @@ const Form = (FormComponent) =>
             this.setState({
                 [node.name]: {node, value: node.value}
             });
+            if (this.setSharedState) {
+                this.setSharedState({
+                    [node.name]: {node, value: node.value}
+                })
+            }
+        }
+
+        componentDidMount() {
+            const { sharedState } = this.props;
+            if (sharedState) {
+                registerComponent(this, sharedState);
+            }
+        }
+
+        componentWillUnmount() {
+            const { sharedState } = this.props;
+            if (sharedState) {
+                unregisterComponent(this);
+            }
         }
 
         registerComponent = (node) => {

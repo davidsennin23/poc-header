@@ -5,9 +5,9 @@ import Input from '../../atoms/forms/Input';
 import Label from '../../atoms/forms/Label';
 import FormPanel from './FormPanel';
 
-const FormLayout = ({registerComponentFunction, user={}}) =>
+const FormLayout = ({registerComponentFunction, user={}, onFormSubmit=() => {}}) =>
     <FormPanel>
-        <form>
+        <form onSubmit={onFormSubmit}>
             <FormLine lineContainer={LineLabelInput}>
                 <Label>Label:</Label>
                 <Input defaultValue={user.nome} name="nome" ref={registerComponentFunction}/>

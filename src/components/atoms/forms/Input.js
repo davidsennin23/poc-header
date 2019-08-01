@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledInput = styled.input`
+    font-family: ${props => props.theme.fonts.family};
     display: block;
     width: 100%;
     border-radius: 3px;

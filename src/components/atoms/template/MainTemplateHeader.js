@@ -4,7 +4,7 @@ import common from '../../../styles/CommonStyles';
 
 const Header = styled.header`
     width: 100%;
-    background-color: ${props => props.theme.main};
+    background-color: ${props => props.theme.colors.main};
     ${common.clearFloat}
 `;
 

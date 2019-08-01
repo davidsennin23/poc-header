@@ -38,22 +38,18 @@ class SharedState {
 
     getState() {
         return _g(this, _getState)();
-        // return _g(this, _getState).apply(this);
     }
 
     setState(state, perpetrator) {
         _g(this, _setState)(state, perpetrator);
-        // _g(this, _setState).apply(this, [state, perpetrator]);
     }
 
     registerComponent(component) {
         _g(this, _registerComponent)(component);
-        // _g(this, _registerComponent).apply(this, [component]);
     }
 
     unregisterComponent(component) {
         _g(this, _unregisterComponent)(component);
-        // _g(this, _unregisterComponent).apply(this, [component]);
     }
 
 }
@@ -85,6 +81,15 @@ function _i(newS, oldS) {
     return r;
 }
 
+function _c(state) {
+    const s = _g(state, _values);
+    console.log(s);
+    if (s) {
+        const keys = Reflect.ownKeys(s);
+        keys.forEach(k => Reflect.deleteProperty(s, k));
+    }
+}
+
 function _u(keys, newS, old) {
     const chipped = {};
     keys.forEach(k => {
@@ -93,6 +98,9 @@ function _u(keys, newS, old) {
         if (!pd) {
             Reflect.defineProperty(old, k, {
                 value: newS[k],
+                writable: true,
+                enumerable: true,
+                configurable: true
             });
             return;
         }
@@ -138,6 +146,9 @@ _r(_unregisterComponent, function(component) {
     const i = cs.indexOf(component);
     if (i > -1) {
         cs.splice(i, 1);
+        if (cs.length === 0) {
+            _c(this);
+        }
     }
 })
 

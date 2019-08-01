@@ -15,23 +15,23 @@ const FormLayout = ({registerComponentFunction, user={}, onFormSubmit=() => {}})
             </FormLine>
             <FormLine lineContainer={LineLabelInput}>
                 <Label input="sobrenome">Sobrenome:</Label>
-                <Input defaultValue={user.email} name="sobrenome" id="sobrenome" ref={registerComponentFunction}/>
+                <Input defaultValue={user.sobrenome} name="sobrenome" id="sobrenome" ref={registerComponentFunction}/>
             </FormLine>
             <FormLine lineContainer={LineLabelInput}>
                 <Label input="email">E-mail:</Label>
-                <Input defaultValue={user.nome} name="email" id="email" ref={registerComponentFunction}/>
+                <Input defaultValue={user.email} name="email" id="email" ref={registerComponentFunction}/>
             </FormLine>
             <FormLine lineContainer={LineLabelInput}>
                 <Label input="nascimento">Nascimento:</Label>
-                <Input defaultValue={user.nome} name="nascimento" id="nascimento" ref={registerComponentFunction}/>
+                <Input defaultValue={user.nascimento} name="nascimento" id="nascimento" ref={registerComponentFunction}/>
             </FormLine>
             <FormLine lineContainer={LineLabelInput}>
                 <Label input="telefone">Telefone:</Label>
-                <Input defaultValue={user.nome} name="telefone" id="telefone" ref={registerComponentFunction}/>
+                <Input defaultValue={user.telefone} name="telefone" id="telefone" ref={registerComponentFunction}/>
             </FormLine>
             <FormLine lineContainer={LineLabelInput}>
                 <Label input="foto">Foto:</Label>
-                <Input defaultValue={user.nome} name="foto" id="foto" ref={registerComponentFunction}/>
+                <Input defaultValue={user.urlFoto} name="foto" id="foto" ref={registerComponentFunction}/>
             </FormLine>
             <FormLine lineContainer={LineLabelInput}>
                 <Submit>Cadastrar</Submit>
